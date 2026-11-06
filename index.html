@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123b35"><meta name="description" content="AI 西班牙语口语教练">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/style.css">
+<title>IRUN Español · AI 口语教练</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><div class="brand-mark">IR</div><div><div class="brand">IRUN <span>Español</span></div><small>AI 西班牙语口语教练</small></div><div class="level-pill">自适应 · A2 → B2</div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">LATINOAMÉRICA · SPANISH SPEAKING</p><h1>今天，开口说西班牙语。</h1><p class="sub">和 AI 自然对话，实时理解、纠错、积累表达。</p></div><div class="hero-orb">¡Hola!</div></section>
+<section class="controls card">
+ <div class="section-head"><h2>练习设置</h2><span class="muted">可随时切换</span></div>
+ <div class="field-grid">
+  <label>练习模式<select id="mode"><option value="guided">AI 引导练习</option><option value="free">自由表达</option></select></label>
+  <label>对话场景<select id="scene"><option value="wholesale">服装批发销售</option><option value="business">商务交流</option><option value="warehouse">仓库与物流</option><option value="restaurant">餐厅点餐</option><option value="daily">日常生活</option><option value="travel">机场与旅行</option></select></label>
+ </div>
+ <div class="field-grid">
+  <label>难度<select id="level"><option value="adaptive">自动调整（推荐）</option><option value="A2">A2 初中级</option><option value="B1">B1 中级</option><option value="B2">B2 中高级</option></select></label>
+  <label>语音<select id="voice"><option value="latam">拉丁美洲西班牙语</option></select></label>
+ </div>
+ <button id="newPrompt" class="btn btn-soft">换一道练习题</button>
+</section>
+<section class="practice card">
+ <div class="section-head"><div><p class="eyebrow">TU RETO DE HOY</p><h2 id="taskTitle">客户询问最低起订量</h2></div><span class="tag" id="modeTag">AI 引导</span></div>
+ <div class="prompt-box"><div class="label">请用西班牙语表达</div><p id="promptZh">客户问你：你们的最低起订量是多少？</p><p class="hint" id="promptHint">提示：批发 · 最低数量 · 一打（12件）</p></div>
+ <div class="answer-label"><span>你的西班牙语回答</span><span class="muted">支持打字或语音</span></div>
+ <textarea id="answer" rows="3" placeholder="Escribe o habla en español…"></textarea>
+ <div class="action-row"><button id="micBtn" class="btn btn-outline"><span>🎙</span> 开始语音输入</button><button id="submitBtn" class="btn btn-primary">检查并继续 →</button></div>
+ <p class="tiny muted" id="micStatus">语音识别取决于浏览器支持情况；首次使用请允许麦克风权限。</p>
+</section>
+<section class="feedback card" id="feedback" hidden>
+ <div class="section-head"><h2>纠错与详细解析</h2><span class="tag good" id="resultTag">AI 反馈</span></div>
+ <div class="compare"><div><div class="label">你的原句</div><p id="original"></p></div><div><div class="label">建议表达</div><p class="corrected" id="corrected"></p><p class="translation" id="translation"></p></div></div>
+ <div class="explain"><h3>为什么这样表达？</h3><p id="explanation"></p></div>
+ <div class="word-list" id="words"></div>
+ <div class="action-row"><button id="repeatBtn" class="btn btn-outline">🔊 听正确表达</button><button id="retryBtn" class="btn btn-primary">重新说一遍</button></div>
+</section>
+<section class="chat card"><div class="section-head"><h2>AI 对话伙伴</h2><span class="online-dot">● 在线练习</span></div><div id="chatLog" class="chat-log"><div class="bubble ai"><b>¡Hola! Soy tu compañero de práctica.</b><p>你好！我是你的西班牙语练习伙伴。选择场景后，我们开始对话吧。</p></div></div></section>
+<section class="footnote"><b>学习原则</b><p>先让你主动表达；出现错误时立即解释并重练；掌握的内容暂时放下，之后随机复习。</p></section>
+</main>
+<footer>IRUN Español · Primera versión <span>拉美西语 · 中文辅助</span></footer>
+</div>
+<script src="/app.js"></script>
+</body></html>
